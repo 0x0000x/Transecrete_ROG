@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+
+actor User as U
+actor System as S
+
+rectangle Transcrete {
+    usecase "Authentication" as UC1
+    usecase "Login" as UC2
+    usecase "Signup" as UC3
+    usecase "View Dashboard" as UC4
+    usecase "Initiate Transfer" as UC5
+    usecase "Search Receiver" as UC6
+    usecase "Return Receiver Info" as UC7
+    usecase "Confirm Transfer" as UC8
+    usecase "Block Receiver" as UC9
+    usecase "View Blocked Users" as UC10
+    usecase "View Transfer History" as UC11
+}
+
+U --> UC2 : Performs
+U --> UC3 : Performs
+U --> UC4 : Views
+U --> UC10 : Views
+U --> UC11 : Views
+
+S --> UC1 : Manages
+S --> UC5 : Initiates
+UC1 --> UC2 : Authenticates
+UC1 --> UC3 : Authenticates
+UC4 --> UC5 : Initiates Transfer
+UC5 --> UC6 : Initiates Search
+UC6 --> UC7 : Triggers
+UC7 --> UC8 : Provides Info
+UC7 --> UC9 : Provides Info
+UC8 --> S : Confirms
+UC9 --> S : Block User
+
+@enduml

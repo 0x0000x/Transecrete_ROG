@@ -1,0 +1,12 @@
+ // Update balances for sender and recipient
+            // $SenderAmount = $usernameUser['Amount'] + $Amount;
+
+            // $senderNewBalance = $usernameUser['newbalance'] - $Amount;
+            // $recipientNewBalance = $recipientUser['newbalance'] + $Amount;
+
+
+            // $updateSenderStmt = $con->prepare("UPDATE paysimdatabase SET newbalance = ?,Amount =? WHERE username = ?");
+            // $updateSenderStmt->execute([$senderNewBalance,$SenderAmount, $username]);
+
+            // $updateRecipientStmt = $con->prepare("UPDATE paysimdatabase SET newbalance = ? WHERE username = ?");
+            // $updateRecipientStmt->execute([$recipientNewBalance, $recipient]);
